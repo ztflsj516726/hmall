@@ -9,14 +9,14 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>item-service</artifactId>
+    <groupId>com.hmall</groupId>
+    <artifactId>pay-service</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
     <dependencies>
         <!--common-->
         <dependency>
@@ -24,15 +24,20 @@
             <artifactId>hm-common</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.heima</groupId>
-            <artifactId>hm-api</artifactId>
-            <version>1.0.0</version>
-        </dependency>
         <!--web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--加密-->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-rsa</artifactId>
+            <version>1.0.9.RELEASE</version>
         </dependency>
         <!--数据库-->
         <dependency>
@@ -44,16 +49,21 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
-        <!--nacos 服务注册发现-->
+        <!--redis-->
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
         <!--feign模块-->
         <dependency>
             <groupId>com.heima</groupId>
             <artifactId>hm-api</artifactId>
             <version>1.0.0</version>
+        </dependency>
+        <!--nacos 服务注册发现-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
     </dependencies>
     <build>
@@ -65,5 +75,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
